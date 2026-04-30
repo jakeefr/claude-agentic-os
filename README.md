@@ -161,7 +161,7 @@ Define your own routines by adding entries to `routines.json` and creating the c
 npx tsx automations/run-routine.ts morning-intel-brief
 ```
 
-**Deployment options:**
+**Example Deployment options:**
 - Windows Task Scheduler / macOS launchd / Linux cron
 - Google Cloud free tier (e2-micro VM)
 - Oracle Cloud free tier (ARM instance)
