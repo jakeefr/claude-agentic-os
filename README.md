@@ -1,6 +1,6 @@
 <div align="center">
 
-# Agentic OS
+# AGENTICOS
 
 **Your AI-powered personal operating system, built on Claude Code.**
 
