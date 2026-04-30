@@ -153,10 +153,6 @@ npx tsx automations/send-email.ts --to you@email.com --subject "Test" --body "He
 
 Next.js · TypeScript · Tailwind CSS · shadcn/ui · Recharts · Framer Motion · Obsidian · Node.js
 
-## Credits
-
-Inspired by [Chase AI's Agentic OS architecture](https://www.youtube.com/@_chase_ai).
-
 ## License
 
 MIT
