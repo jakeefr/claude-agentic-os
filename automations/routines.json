@@ -1,0 +1,86 @@
+[
+  {
+    "id": "morning-intel-brief",
+    "name": "Morning Intel Brief",
+    "description": "AI/dev news scan, email summary, calendar preview, daily note creation",
+    "schedule": "0 7 * * *",
+    "scheduleHuman": "Daily 7:00 AM",
+    "category": "productivity",
+    "skillPath": "skills/routines/morning-intel-brief/SKILL.md",
+    "estimatedMinutes": 8,
+    "estimatedCost": 0.15,
+    "enabled": true
+  },
+  {
+    "id": "client-pulse-check",
+    "name": "Client Pulse Check",
+    "description": "Review active projects, flag stale clients, check for missed follow-ups",
+    "schedule": "0 9 * * 1-5",
+    "scheduleHuman": "Weekdays 9:00 AM",
+    "category": "business",
+    "skillPath": "skills/routines/client-pulse-check/SKILL.md",
+    "estimatedMinutes": 5,
+    "estimatedCost": 0.10,
+    "enabled": true
+  },
+  {
+    "id": "content-pipeline",
+    "name": "Content Pipeline",
+    "description": "Mine today's research and notes for X content ideas, draft hooks",
+    "schedule": "0 12 * * 1-5",
+    "scheduleHuman": "Weekdays 12:00 PM",
+    "category": "content",
+    "skillPath": "skills/routines/content-pipeline/SKILL.md",
+    "estimatedMinutes": 6,
+    "estimatedCost": 0.12,
+    "enabled": true
+  },
+  {
+    "id": "inbox-triage",
+    "name": "Inbox Triage",
+    "description": "Gmail triage — categorize, flag urgent, draft replies for review",
+    "schedule": "0 8 * * *",
+    "scheduleHuman": "Daily 8:00 AM",
+    "category": "productivity",
+    "skillPath": "skills/routines/inbox-triage/SKILL.md",
+    "estimatedMinutes": 5,
+    "estimatedCost": 0.10,
+    "enabled": true
+  },
+  {
+    "id": "github-repo-health",
+    "name": "GitHub Repo Health",
+    "description": "Check PRs, issues, stale branches across your repositories",
+    "schedule": "0 10 * * 1,3,5",
+    "scheduleHuman": "Mon/Wed/Fri 10:00 AM",
+    "category": "dev",
+    "skillPath": "skills/routines/github-repo-health/SKILL.md",
+    "estimatedMinutes": 4,
+    "estimatedCost": 0.08,
+    "enabled": true
+  },
+  {
+    "id": "lead-scanner",
+    "name": "Lead Scanner",
+    "description": "Search Reddit, X, HN for potential freelance/consulting leads — NEVER auto-send",
+    "schedule": "0 11 * * 1,4",
+    "scheduleHuman": "Mon/Thu 11:00 AM",
+    "category": "business",
+    "skillPath": "skills/routines/lead-scanner/SKILL.md",
+    "estimatedMinutes": 7,
+    "estimatedCost": 0.15,
+    "enabled": true
+  },
+  {
+    "id": "daily-wrap",
+    "name": "Daily Wrap",
+    "description": "Summarize day's activity, update daily note, email wrap-up",
+    "schedule": "0 18 * * *",
+    "scheduleHuman": "Daily 6:00 PM",
+    "category": "productivity",
+    "skillPath": "skills/routines/daily-wrap/SKILL.md",
+    "estimatedMinutes": 5,
+    "estimatedCost": 0.10,
+    "enabled": true
+  }
+]

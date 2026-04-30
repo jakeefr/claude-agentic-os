@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+dashboard/.next/
+dashboard/out/
+
+# Environment
+.env
+.env.local
+.env.*.local
+.env.production
+
+# Personal data (keep folders, ignore contents)
+memory/inbox/*
+!memory/inbox/.gitkeep
+memory/daily-notes/*
+!memory/daily-notes/.gitkeep
+memory/people/*
+!memory/people/.gitkeep
+memory/decisions/*
+!memory/decisions/.gitkeep
+memory/research/*
+!memory/research/.gitkeep
+memory/learnings/*
+!memory/learnings/.gitkeep
+
+# Automation logs and state
+automations/logs/*
+!automations/logs/.gitkeep
+automations/routine-runs.json
+
+# Dashboard state
+dashboard/.runs/
+dashboard/data/manual-usage.json
+
+# Obsidian workspace (user-specific)
+memory/.obsidian/workspace.json
+
+# Secrets
+*.key
+*.pem
+*.secret
+ssh/
+
+# OS and IDE
+.DS_Store
+Thumbs.db
+
+# Sync scripts (user-specific)
+sync.ps1
+start-sync.bat
