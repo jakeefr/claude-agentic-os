@@ -62,11 +62,11 @@ agentic-os/
 │   └── LEARNINGS.md        # Running improvement log
 │
 ├── skills/                 # Layer 2: Modular skill definitions
-│   ├── productivity/       # Gmail, calendar, vault cleanup
-│   ├── research/           # Deep research, YouTube pipeline
-│   ├── content/            # X threads, carousels, ideation
-│   ├── business/           # Proposals, outreach, status updates
-│   ├── dev/                # GitHub, code review, READMEs
+│   ├── productivity/       # Email, calendar, maintenance
+│   ├── research/           # Web research, video analysis, trending
+│   ├── content/            # Social media, writing, ideation
+│   ├── business/           # Proposals, outreach, client management
+│   ├── dev/                # Git workflows, code review, documentation
 │   └── routines/           # Scheduled automation skills
 │
 ├── automations/            # Layer 3: Routine runner + schedules
