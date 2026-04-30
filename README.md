@@ -10,16 +10,16 @@
 
 ## What is this?
 
-Agentic OS turns Claude Code into a personal operating system. It's a 4-layer framework — memory, skills, automations, and a dashboard — that you customize to fit how you work. Clone it, fill in your context, build your skills, and let it run.
+Agentic OS turns Claude Code into a personal operating system. It's a 4-layer framework - memory, skills, automations, and a dashboard - that you customize to fit how you work. Clone it, fill in your context, build your skills, and let it run.
 
 ## Features
 
-- **Obsidian-backed memory** — persistent, linked markdown vault that Claude reads and writes
-- **Skill framework** — structured `SKILL.md` format with example templates across 5 categories
-- **Routine automation** — define scheduled tasks that run headlessly via cron or Task Scheduler
-- **Real-time dashboard** — Next.js dashboard with token tracking, activity charts, routine status
-- **Headless execution** — routines run unattended on any machine
-- **VPS deployment ready** — deploy to a free-tier VM and let it run 24/7
+- **Obsidian-backed memory** - persistent, linked markdown vault that Claude reads and writes
+- **Skill framework** - structured `SKILL.md` format with example templates across 5 categories
+- **Routine automation** - define scheduled tasks that run headlessly via cron or Task Scheduler
+- **Real-time dashboard** - Next.js dashboard with token tracking, activity charts, routine status
+- **Headless execution** - routines run unattended on any machine
+- **VPS deployment ready** - deploy to a free-tier VM and let it run 24/7
 
 ## Quick Start
 
@@ -34,7 +34,7 @@ cd dashboard && npm install && cd ..
 # 3. Configure
 cp .env.example .env
 # Edit .env with your credentials
-# Edit CLAUDE.md — replace all [PLACEHOLDER] values with your info
+# Edit CLAUDE.md - replace all [PLACEHOLDER] values with your info
 # Edit context/user-preferences.md, context/active-projects.md, context/brand.md
 
 # 4. Update timezone (default: America/Chicago)
@@ -91,7 +91,7 @@ agentic-os/
 
 The `memory/` folder is an Obsidian-compatible vault. Claude reads and writes it freely during sessions.
 
-- Notes link with `[[double brackets]]` — Obsidian renders the graph
+- Notes link with `[[double brackets]]` - Obsidian renders the graph
 - Research goes to `memory/research/`, people to `memory/people/`, etc.
 - Routine outputs land in `memory/inbox/` as dated markdown files
 - `LEARNINGS.md` is a running log of what worked and what didn't
@@ -112,7 +112,7 @@ skills/
   routines/       # Skills designed to run on a schedule
 ```
 
-Example templates are included in each category as starting points — customize them or build your own.
+Example templates are included in each category as starting points - customize them or build your own.
 
 **SKILL.md format:**
 
@@ -135,7 +135,7 @@ Below the frontmatter, write the step-by-step instructions Claude should follow.
 
 ## Routines
 
-Routines are skills that run on a schedule — unattended, headlessly. Each routine points to a `SKILL.md` and is defined in `automations/routines.json`.
+Routines are skills that run on a schedule - unattended, headlessly. Each routine points to a `SKILL.md` and is defined in `automations/routines.json`.
 
 **Example routine entry:**
 
