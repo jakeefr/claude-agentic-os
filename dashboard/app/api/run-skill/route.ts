@@ -5,11 +5,15 @@ import fs from 'fs'
 
 export async function POST(request: Request) {
   const body = await request.json()
-  const { prompt, skill } = body as { prompt: string; skill: string }
+  const { prompt, skill, skillPath } = body as { prompt: string; skill: string; skillPath?: string }
 
   if (!prompt || typeof prompt !== 'string') {
     return Response.json({ error: 'prompt is required' }, { status: 400 })
   }
+
+  const claudePrompt = skillPath
+    ? `Using the ${skill} skill (${skillPath}), execute the following task: ${prompt}`
+    : prompt
 
   const id = `run-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
 
@@ -28,7 +32,7 @@ export async function POST(request: Request) {
 
   const outputPath = getRunOutputPath(id)
 
-  const child = spawn('claude', ['--print', '--dangerously-skip-permissions', prompt], {
+  const child = spawn('claude', ['--print', '--dangerously-skip-permissions', claudePrompt], {
     cwd: VAULT_ROOT,
     shell: true,
     stdio: ['ignore', 'pipe', 'pipe'],

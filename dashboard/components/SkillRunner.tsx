@@ -3,73 +3,79 @@
 import { useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
 
-const SKILL_GROUPS: { label: string; skills: { name: string; command: string }[] }[] = [
+interface Skill {
+  name: string
+  command: string
+  skillPath?: string
+}
+
+const SKILL_GROUPS: { label: string; skills: Skill[] }[] = [
   {
     label: 'MEMORY',
     skills: [
-      { name: 'Vault Cleanup', command: 'Run vault cleanup' },
-      { name: 'KB Query', command: 'search memory for ' },
-      { name: 'KB Status', command: 'Run vault health check' },
+      { name: 'Vault Cleanup', command: 'Run vault cleanup', skillPath: 'skills/productivity/vault-cleanup/SKILL.md' },
+      { name: 'KB Query', command: 'search memory for ', skillPath: 'skills/research/kb-query/SKILL.md' },
+      { name: 'KB Status', command: 'Run vault health check', skillPath: 'skills/productivity/vault-cleanup/SKILL.md' },
     ],
   },
   {
     label: 'PRODUCTIVITY',
     skills: [
-      { name: 'Morning Brief', command: 'Run the morning brief' },
-      { name: 'Inbox Triage', command: 'Triage my inbox' },
-      { name: 'Calendar Check', command: 'Check my calendar for today' },
+      { name: 'Morning Brief', command: 'Run the morning brief', skillPath: 'skills/productivity/morning-brief/SKILL.md' },
+      { name: 'Inbox Triage', command: 'Triage my inbox', skillPath: 'skills/productivity/gmail/SKILL.md' },
+      { name: 'Calendar Check', command: 'Check my calendar for today', skillPath: 'skills/productivity/calendar/SKILL.md' },
     ],
   },
   {
     label: 'RESEARCH',
     skills: [
-      { name: 'Deep Research', command: 'research ' },
-      { name: 'YT Pipeline', command: '/watch-video ' },
-      { name: 'YT Search', command: 'search YouTube for ' },
-      { name: 'GitHub Trending', command: 'Show GitHub trending repos' },
-      { name: 'Competitor Analysis', command: 'Analyze competitor ' },
+      { name: 'Deep Research', command: 'research ', skillPath: 'skills/research/deep-research/SKILL.md' },
+      { name: 'YT Pipeline', command: '/watch-video ', skillPath: 'skills/research/yt-pipeline/SKILL.md' },
+      { name: 'YT Search', command: 'search YouTube for ', skillPath: 'skills/research/yt-search/SKILL.md' },
+      { name: 'GitHub Trending', command: 'Show GitHub trending repos', skillPath: 'skills/research/github-trending/SKILL.md' },
+      { name: 'Competitor Analysis', command: 'Analyze competitor ', skillPath: 'skills/research/competitor-analysis/SKILL.md' },
     ],
   },
   {
     label: 'CONTENT',
     skills: [
-      { name: 'Outlines', command: 'Create a content outline for ' },
-      { name: 'Ideation', command: 'Brainstorm content ideas about ' },
-      { name: 'X Growth', command: 'Draft X thread about ' },
-      { name: 'Content Cascade', command: 'Repurpose this content: ' },
-      { name: 'Short-form', command: 'Create short-form script for ' },
-      { name: 'Carousel', command: 'Create carousel for ' },
+      { name: 'Outlines', command: 'Create a content outline for ', skillPath: 'skills/content/outlines/SKILL.md' },
+      { name: 'Ideation', command: 'Brainstorm content ideas about ', skillPath: 'skills/content/ideation/SKILL.md' },
+      { name: 'X Growth', command: 'Draft X thread about ', skillPath: 'skills/content/x-growth/SKILL.md' },
+      { name: 'Content Cascade', command: 'Repurpose this content: ', skillPath: 'skills/content/content-cascade/SKILL.md' },
+      { name: 'Short-form', command: 'Create short-form script for ', skillPath: 'skills/content/short-form/SKILL.md' },
+      { name: 'Carousel', command: 'Create carousel for ', skillPath: 'skills/content/carousel/SKILL.md' },
     ],
   },
   {
     label: 'DEV',
     skills: [
-      { name: 'GitHub Status', command: 'Show GitHub status for all repos' },
-      { name: 'Code Review', command: 'Review this code: ' },
-      { name: 'Commit Summary', command: 'Summarize recent commits' },
-      { name: 'README Gen', command: 'Generate a README for ' },
+      { name: 'GitHub Status', command: 'Show GitHub status for all repos', skillPath: 'skills/dev/github/SKILL.md' },
+      { name: 'Code Review', command: 'Review this code: ', skillPath: 'skills/dev/code-review/SKILL.md' },
+      { name: 'Commit Summary', command: 'Summarize recent commits', skillPath: 'skills/dev/commit-summary/SKILL.md' },
+      { name: 'README Gen', command: 'Generate a README for ', skillPath: 'skills/dev/readme-generator/SKILL.md' },
       { name: 'Deploy', command: 'Deploy to production' },
     ],
   },
   {
     label: 'BUSINESS',
     skills: [
-      { name: 'Proposal', command: 'Write a proposal for ' },
-      { name: 'Project Brief', command: 'Create a project brief for ' },
-      { name: 'Status Update', command: 'Write a status update for ' },
-      { name: 'Cold Outreach', command: 'Draft outreach to ' },
+      { name: 'Proposal', command: 'Write a proposal for ', skillPath: 'skills/business/proposal-generator/SKILL.md' },
+      { name: 'Project Brief', command: 'Create a project brief for ', skillPath: 'skills/business/project-brief/SKILL.md' },
+      { name: 'Status Update', command: 'Write a status update for ', skillPath: 'skills/business/status-update/SKILL.md' },
+      { name: 'Cold Outreach', command: 'Draft outreach to ', skillPath: 'skills/business/cold-outreach/SKILL.md' },
     ],
   },
   {
     label: 'ROUTINES',
     skills: [
-      { name: 'Morning Brief', command: 'Run morning intel brief' },
-      { name: 'Client Pulse', command: 'Run client pulse check' },
-      { name: 'Content Pipeline', command: 'Run content pipeline' },
-      { name: 'Inbox Triage', command: 'Run inbox triage' },
-      { name: 'GitHub Health', command: 'Run GitHub repo health' },
-      { name: 'Lead Scanner', command: 'Run lead scanner' },
-      { name: 'Daily Wrap', command: 'Run daily wrap' },
+      { name: 'Morning Brief', command: 'Run morning intel brief', skillPath: 'skills/routines/morning-intel-brief/SKILL.md' },
+      { name: 'Client Pulse', command: 'Run client pulse check', skillPath: 'skills/routines/client-pulse-check/SKILL.md' },
+      { name: 'Content Pipeline', command: 'Run content pipeline', skillPath: 'skills/routines/content-pipeline/SKILL.md' },
+      { name: 'Inbox Triage', command: 'Run inbox triage', skillPath: 'skills/routines/inbox-triage/SKILL.md' },
+      { name: 'GitHub Health', command: 'Run GitHub repo health', skillPath: 'skills/routines/github-repo-health/SKILL.md' },
+      { name: 'Lead Scanner', command: 'Run lead scanner', skillPath: 'skills/routines/lead-scanner/SKILL.md' },
+      { name: 'Daily Wrap', command: 'Run daily wrap', skillPath: 'skills/routines/daily-wrap/SKILL.md' },
     ],
   },
   {
@@ -82,7 +88,13 @@ const SKILL_GROUPS: { label: string; skills: { name: string; command: string }[]
 
 export function SkillRunner({ onRunStarted }: { onRunStarted?: () => void }) {
   const [prompt, setPrompt] = useState('')
+  const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null)
   const [running, setRunning] = useState(false)
+
+  const selectSkill = useCallback((skill: Skill) => {
+    setSelectedSkill(skill)
+    setPrompt(skill.command)
+  }, [])
 
   const run = useCallback(async () => {
     const trimmed = prompt.trim()
@@ -93,16 +105,21 @@ export function SkillRunner({ onRunStarted }: { onRunStarted?: () => void }) {
       const res = await fetch('/api/run-skill', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: trimmed, skill: 'custom' }),
+        body: JSON.stringify({
+          prompt: trimmed,
+          skill: selectedSkill?.name ?? 'custom',
+          skillPath: selectedSkill?.skillPath ?? null,
+        }),
       })
       if (res.ok) {
         setPrompt('')
+        setSelectedSkill(null)
         onRunStarted?.()
       }
     } finally {
       setRunning(false)
     }
-  }, [prompt, running, onRunStarted])
+  }, [prompt, running, selectedSkill, onRunStarted])
 
   return (
     <motion.div
@@ -175,7 +192,7 @@ export function SkillRunner({ onRunStarted }: { onRunStarted?: () => void }) {
                   key={skill.name}
                   whileHover={{ scale: 1.02, boxShadow: '0 0 12px rgba(217,119,6,0.1)' }}
                   whileTap={{ scale: 0.97 }}
-                  onClick={() => setPrompt(skill.command)}
+                  onClick={() => selectSkill(skill)}
                   className="border border-[rgba(255,255,255,0.08)] rounded-lg px-5 py-2 text-[11px] text-[#9CA3AF] hover:text-[#D97706] hover:border-[#D97706]/30 transition-colors min-w-[140px] text-left"
                 >
                   {skill.name}
