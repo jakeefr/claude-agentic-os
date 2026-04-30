@@ -205,7 +205,8 @@ export function getVaultTree(): VaultEntry[] {
 export function readVaultFile(relativePath: string): string | null {
   const memoryRoot = path.join(VAULT_ROOT, 'memory')
   const full = path.join(memoryRoot, relativePath)
-  if (!full.startsWith(memoryRoot) || !fs.existsSync(full)) return null
+  const rel = path.relative(memoryRoot, full)
+  if (rel.startsWith('..') || path.isAbsolute(rel) || !fs.existsSync(full)) return null
   return fs.readFileSync(full, 'utf-8')
 }
 
