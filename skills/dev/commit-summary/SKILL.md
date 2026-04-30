@@ -1,17 +1,17 @@
 ---
 name: commit-summary
-trigger: "summarize commits", "what changed", "commit summary", "changelog", "recent changes in [repo]", "git log summary"
+trigger: "summarize commits, what changed, commit summary, changelog, recent changes in [repo], git log summary"
 inputs:
-  - Optional: repository path (default: current directory)
-  - Optional: time range (default: last 7 days)
-  - Optional: branch (default: main/current)
-  - Optional: format (summary, changelog, standup, client update)
+  - "Optional: repository path (default: current directory)"
+  - "Optional: time range (default: last 7 days)"
+  - "Optional: branch (default: main/current)"
+  - "Optional: format (summary, changelog, standup, client update)"
 outputs:
-  - Formatted commit summary
-  - Optional: saved to ./memory/projects/PROJECT/changelog-YYYY-MM-DD.md
+  - "Formatted commit summary"
+  - "Optional: saved to ./memory/projects/PROJECT/changelog-YYYY-MM-DD.md"
 dependencies:
-  - Git CLI access
-  - Read access to the target repository
+  - "Git CLI access"
+  - "Read access to the target repository"
 ---
 
 ## Purpose

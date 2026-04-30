@@ -1,17 +1,17 @@
 ---
 name: deep-research
-trigger: "research [topic]", "find out about [topic]", "dig into [topic]", any request for background on a company/person/concept/technology
+trigger: "research [topic], find out about [topic], dig into [topic], any request for background on a company/person/concept/technology"
 inputs:
-  - Topic or question to research
-  - Optional: scope (broad overview vs. specific angle)
-  - Optional: output format preference
+  - "Topic or question to research"
+  - "Optional: scope (broad overview vs. specific angle)"
+  - "Optional: output format preference"
 outputs:
-  - Structured research brief saved to ./memory/research/TOPIC-NAME.md
-  - Linked notes for key people, companies, or concepts (if significant)
-  - Summary delivered in-session
+  - "Structured research brief saved to ./memory/research/TOPIC-NAME.md"
+  - "Linked notes for key people, companies, or concepts (if significant)"
+  - "Summary delivered in-session"
 dependencies:
-  - Web search (built-in)
-  - Read/Write tools for memory
+  - "Web search (built-in)"
+  - "Read/Write tools for memory"
 ---
 
 ## Execution Steps

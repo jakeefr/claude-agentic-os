@@ -1,17 +1,17 @@
 ---
 name: add-event
-trigger: "add to calendar", "schedule", "remind me", "block time for", "set up a meeting", "tomorrow at", "this Friday", any natural language time/event request
+trigger: "add to calendar, schedule, remind me, block time for, set up a meeting, tomorrow at, this Friday, any natural language time/event request"
 inputs:
-  - Natural language event description (e.g., "tomorrow at 3pm, call with [CLIENT_1] client")
-  - Optional: duration (default 30 minutes)
-  - Optional: description or notes
-  - Optional: attendees (email addresses)
+  - "Natural language event description (e.g., tomorrow at 3pm, call with [CLIENT_1] client)"
+  - "Optional: duration (default 30 minutes)"
+  - "Optional: description or notes"
+  - "Optional: attendees (email addresses)"
 outputs:
-  - Google Calendar event created via MCP
-  - Confirmation with event title, date, time, and duration
+  - "Google Calendar event created via MCP"
+  - "Confirmation with event title, date, time, and duration"
 dependencies:
-  - Google Calendar MCP (mcp__claude_ai_Google_Calendar tools)
-  - Timezone: America/Chicago (CST/CDT)
+  - "Google Calendar MCP (mcp__claude_ai_Google_Calendar tools)"
+  - "Timezone: America/Chicago (CST/CDT)"
 ---
 
 ## Purpose

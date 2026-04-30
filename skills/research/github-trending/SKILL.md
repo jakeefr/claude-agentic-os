@@ -1,16 +1,16 @@
 ---
 name: github-trending
-trigger: "github trending", "trending repos", "what's hot on GitHub", "new open source projects", "trending in [language]"
+trigger: "github trending, trending repos, what's hot on GitHub, new open source projects, trending in [language]"
 inputs:
-  - Optional: language filter (TypeScript, Python, Rust, Go, all)
-  - Optional: time range (today, this week, this month)
-  - Optional: topic filter (AI, web, CLI, automation)
+  - "Optional: language filter (TypeScript, Python, Rust, Go, all)"
+  - "Optional: time range (today, this week, this month)"
+  - "Optional: topic filter (AI, web, CLI, automation)"
 outputs:
-  - Curated trending repos with analysis
-  - Saved to ./memory/research/github-trending-YYYY-MM-DD.md
+  - "Curated trending repos with analysis"
+  - "Saved to ./memory/research/github-trending-YYYY-MM-DD.md"
 dependencies:
-  - Web search capability
-  - Write: ./memory/research/
+  - "Web search capability"
+  - "Write: ./memory/research/"
 ---
 
 ## Purpose

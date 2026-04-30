@@ -1,18 +1,18 @@
 ---
 name: morning-brief
-trigger: "morning brief", "daily review", "start my day", "what's on today", "run the morning brief"
+trigger: "morning brief, daily review, start my day, what's on today, run the morning brief"
 inputs:
-  - None required (reads context automatically)
-  - Optional: specific focus area or override for today
+  - "None required (reads context automatically)"
+  - "Optional: specific focus area or override for today"
 outputs:
-  - Daily note saved to ./memory/daily-notes/YYYY-MM-DD.md
-  - Updated active-projects.md with current status
-  - In-session summary of the day's priorities
+  - "Daily note saved to ./memory/daily-notes/YYYY-MM-DD.md"
+  - "Updated active-projects.md with current status"
+  - "In-session summary of the day's priorities"
 dependencies:
-  - Gmail MCP (mcp__claude_ai_Gmail tools) for inbox triage
-  - Read: ./context/active-projects.md
-  - Read: ./context/user-preferences.md
-  - Read: ./memory/daily-notes/ (previous day's note if exists)
+  - "Gmail MCP (mcp__claude_ai_Gmail tools) for inbox triage"
+  - "Read: ./context/active-projects.md"
+  - "Read: ./context/user-preferences.md"
+  - "Read: ./memory/daily-notes/ (previous day's note if exists)"
 ---
 
 ## Purpose

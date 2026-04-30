@@ -1,19 +1,19 @@
 ---
 name: proposal-generator
-trigger: "write a proposal", "generate proposal for [client]", "draft a proposal", "client proposal", "project proposal"
+trigger: "write a proposal, generate proposal for [client], draft a proposal, client proposal, project proposal"
 inputs:
-  - Client name and context
-  - Project scope or brief description
-  - Optional: budget range, timeline, specific requirements
-  - Optional: previous conversations or email threads for context
+  - "Client name and context"
+  - "Project scope or brief description"
+  - "Optional: budget range, timeline, specific requirements"
+  - "Optional: previous conversations or email threads for context"
 outputs:
-  - Complete project proposal document
-  - Saved to ./memory/projects/CLIENT/proposal-YYYY-MM-DD.md
+  - "Complete project proposal document"
+  - "Saved to ./memory/projects/CLIENT/proposal-YYYY-MM-DD.md"
 dependencies:
-  - Read: ./context/brand.md
-  - Read: ./context/active-projects.md
-  - Read: ./memory/people/ (client contact notes if they exist)
-  - Write: ./memory/projects/
+  - "Read: ./context/brand.md"
+  - "Read: ./context/active-projects.md"
+  - "Read: ./memory/people/ (client contact notes if they exist)"
+  - "Write: ./memory/projects/"
 ---
 
 ## Purpose

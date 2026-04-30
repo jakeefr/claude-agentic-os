@@ -1,16 +1,16 @@
 ---
 name: yt-pipeline
-trigger: "watch this video", "analyze this YouTube", "/watch-video [url]", any YouTube URL dropped in conversation, "extract insights from [video]"
+trigger: "watch this video, analyze this YouTube, /watch-video [url], any YouTube URL dropped in conversation, extract insights from [video]"
 inputs:
-  - YouTube URL or local video file path
-  - Optional: specific focus ("extract the architecture", "find all action items", "get the timestamps")
+  - "YouTube URL or local video file path"
+  - "Optional: specific focus (extract the architecture, find all action items, get the timestamps)"
 outputs:
-  - Structured video breakdown saved to ./memory/research/YYYY-MM-DD-video-title.md
-  - Linked notes for key concepts, tools, or people mentioned
-  - In-session summary of top insights and action items
+  - "Structured video breakdown saved to ./memory/research/YYYY-MM-DD-video-title.md"
+  - "Linked notes for key concepts, tools, or people mentioned"
+  - "In-session summary of top insights and action items"
 dependencies:
-  - Video Vision plugin (/watch-video command)
-  - Read/Write tools for memory
+  - "Video Vision plugin (/watch-video command)"
+  - "Read/Write tools for memory"
 ---
 
 ## Execution Steps

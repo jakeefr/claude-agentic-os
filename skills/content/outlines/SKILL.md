@@ -1,18 +1,18 @@
 ---
 name: outlines
-trigger: "outline a [post/thread/video]", "create content for [topic]", "draft an outline", "plan a YouTube video", "write a thread outline", any content planning request
+trigger: "outline a [post/thread/video], create content for [topic], draft an outline, plan a YouTube video, write a thread outline, any content planning request"
 inputs:
-  - Topic or angle to cover
-  - Platform: X thread | YouTube | blog post | short-form | carousel | email
-  - Optional: target audience, tone notes, angle preference
-  - Optional: project context (which client, which brand, what goal)
+  - "Topic or angle to cover"
+  - "Platform: X thread | YouTube | blog post | short-form | carousel | email"
+  - "Optional: target audience, tone notes, angle preference"
+  - "Optional: project context (which client, which brand, what goal)"
 outputs:
-  - Structured content outline saved to ./memory/projects/ under relevant folder
-  - In-session delivery of the outline for review/iteration
+  - "Structured content outline saved to ./memory/projects/ under relevant folder"
+  - "In-session delivery of the outline for review/iteration"
 dependencies:
-  - Read: ./context/brand.md (always — load before writing anything)
-  - Read: ./context/active-projects.md (for project context)
-  - Write: ./memory/projects/
+  - "Read: ./context/brand.md (always — load before writing anything)"
+  - "Read: ./context/active-projects.md (for project context)"
+  - "Write: ./memory/projects/"
 ---
 
 ## Execution Steps

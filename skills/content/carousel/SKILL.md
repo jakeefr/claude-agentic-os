@@ -1,17 +1,17 @@
 ---
 name: carousel
-trigger: "create carousel", "carousel post", "slide deck for X", "carousel for [topic]", "LinkedIn carousel", "Instagram carousel"
+trigger: "create carousel, carousel post, slide deck for X, carousel for [topic], LinkedIn carousel, Instagram carousel"
 inputs:
-  - Topic or insight to convey
-  - Platform: X | LinkedIn | Instagram (default: X)
-  - Optional: number of slides (default: 8-10)
-  - Optional: source content to adapt from
+  - "Topic or insight to convey"
+  - "Platform: X | LinkedIn | Instagram (default: X)"
+  - "Optional: number of slides (default: 8-10)"
+  - "Optional: source content to adapt from"
 outputs:
-  - Full carousel text content (slide by slide)
-  - Saved to ./memory/projects/carousel/YYYY-MM-DD-topic.md
+  - "Full carousel text content (slide by slide)"
+  - "Saved to ./memory/projects/carousel/YYYY-MM-DD-topic.md"
 dependencies:
-  - Read: ./context/brand.md
-  - Write: ./memory/projects/carousel/
+  - "Read: ./context/brand.md"
+  - "Write: ./memory/projects/carousel/"
 ---
 
 ## Purpose

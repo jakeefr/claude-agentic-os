@@ -1,18 +1,18 @@
 ---
 name: gmail
-trigger: "check email", "triage inbox", "draft a reply to [person]", "send an email", "what emails need attention", Gmail-related requests
+trigger: "check email, triage inbox, draft a reply to [person], send an email, what emails need attention, Gmail-related requests"
 inputs:
-  - Task type: triage | draft | send | search | label
-  - Optional: specific email context (sender, subject, thread ID)
-  - Optional: reply tone or constraints
+  - "Task type: triage | draft | send | search | label"
+  - "Optional: specific email context (sender, subject, thread ID)"
+  - "Optional: reply tone or constraints"
 outputs:
-  - Triage summary with categorized emails
-  - Draft replies in [YOUR_NAME]'s voice
-  - Sent confirmations or saved drafts
+  - "Triage summary with categorized emails"
+  - "Draft replies in [YOUR_NAME]'s voice"
+  - "Sent confirmations or saved drafts"
 dependencies:
-  - Gmail MCP (mcp__claude_ai_Gmail tools)
-  - Read: ./context/brand.md (for voice when drafting)
-  - Read: ./context/user-preferences.md (for communication style)
+  - "Gmail MCP (mcp__claude_ai_Gmail tools)"
+  - "Read: ./context/brand.md (for voice when drafting)"
+  - "Read: ./context/user-preferences.md (for communication style)"
 ---
 
 ## Triage Categories

@@ -1,16 +1,16 @@
 ---
 name: content-cascade
-trigger: "repurpose this", "content cascade", "turn this into", "cross-post this", "make a thread from this video", "repurpose content"
+trigger: "repurpose this, content cascade, turn this into, cross-post this, make a thread from this video, repurpose content"
 inputs:
-  - Source content (URL, transcript, blog post, thread, or paste)
-  - Source platform (YouTube, X, blog, newsletter, etc.)
-  - Target platforms (default: all applicable)
+  - "Source content (URL, transcript, blog post, thread, or paste)"
+  - "Source platform (YouTube, X, blog, newsletter, etc.)"
+  - "Target platforms (default: all applicable)"
 outputs:
-  - Adapted content for each target platform
-  - Saved to ./memory/projects/content-cascade/YYYY-MM-DD-source-slug.md
+  - "Adapted content for each target platform"
+  - "Saved to ./memory/projects/content-cascade/YYYY-MM-DD-source-slug.md"
 dependencies:
-  - Read: ./context/brand.md
-  - Write: ./memory/projects/content-cascade/
+  - "Read: ./context/brand.md"
+  - "Write: ./memory/projects/content-cascade/"
 ---
 
 ## Purpose

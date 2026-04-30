@@ -1,18 +1,18 @@
 ---
 name: competitor-analysis
-trigger: "analyze competitor", "competitor research", "what is [person/company] doing", "competitive analysis", "research [competitor]"
+trigger: "analyze competitor, competitor research, what is [person/company] doing, competitive analysis, research [competitor]"
 inputs:
-  - Competitor name, URL, or social handle
-  - Optional: focus area (content strategy, pricing, tech stack, positioning)
-  - Optional: comparison angle (vs [YOUR_NAME]'s offering, vs another competitor)
+  - "Competitor name, URL, or social handle"
+  - "Optional: focus area (content strategy, pricing, tech stack, positioning)"
+  - "Optional: comparison angle (vs [YOUR_NAME]'s offering, vs another competitor)"
 outputs:
-  - Competitor profile with strategic analysis
-  - Saved to ./memory/research/competitor-YYYY-MM-DD-name.md
+  - "Competitor profile with strategic analysis"
+  - "Saved to ./memory/research/competitor-YYYY-MM-DD-name.md"
 dependencies:
-  - Web search capability
-  - Read: ./context/brand.md (for positioning comparison)
-  - Read: ./context/active-projects.md (for relevance to current work)
-  - Write: ./memory/research/
+  - "Web search capability"
+  - "Read: ./context/brand.md (for positioning comparison)"
+  - "Read: ./context/active-projects.md (for relevance to current work)"
+  - "Write: ./memory/research/"
 ---
 
 ## Purpose

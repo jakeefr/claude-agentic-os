@@ -1,16 +1,16 @@
 ---
 name: calendar
-trigger: "what's on my calendar", "schedule a meeting", "check my schedule", "am I free [day/time]", "add an event", "find a time for [meeting]", any scheduling-related request
+trigger: "what's on my calendar, schedule a meeting, check my schedule, am I free [day/time], add an event, find a time for [meeting], any scheduling-related request"
 inputs:
-  - Task type: view | create | check-availability | suggest-time | reschedule
-  - Optional: date/time range, participants, event details
+  - "Task type: view | create | check-availability | suggest-time | reschedule"
+  - "Optional: date/time range, participants, event details"
 outputs:
-  - Agenda view or availability summary
-  - Created/updated calendar events
-  - Suggested meeting times based on preferences
+  - "Agenda view or availability summary"
+  - "Created/updated calendar events"
+  - "Suggested meeting times based on preferences"
 dependencies:
-  - Google Calendar MCP (mcp__claude_ai_Google_Calendar tools)
-  - Read: ./context/user-preferences.md (for timezone + scheduling preferences)
+  - "Google Calendar MCP (mcp__claude_ai_Google_Calendar tools)"
+  - "Read: ./context/user-preferences.md (for timezone + scheduling preferences)"
 ---
 
 ## [YOUR_NAME]'s Scheduling Preferences

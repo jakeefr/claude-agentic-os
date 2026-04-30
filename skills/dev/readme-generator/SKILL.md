@@ -1,17 +1,17 @@
 ---
 name: readme-generator
-trigger: "generate readme", "write a README", "create project readme", "README for [repo]", "document this project"
+trigger: "generate readme, write a README, create project readme, README for [repo], document this project"
 inputs:
-  - Repository path or name
-  - Optional: target audience (developers, users, contributors, clients)
-  - Optional: sections to include or exclude
+  - "Repository path or name"
+  - "Optional: target audience (developers, users, contributors, clients)"
+  - "Optional: sections to include or exclude"
 outputs:
-  - README.md file written to the repo root
-  - If client project: saved copy to ./memory/projects/CLIENT/readme-draft.md
+  - "README.md file written to the repo root"
+  - "If client project: saved copy to ./memory/projects/CLIENT/readme-draft.md"
 dependencies:
-  - Read access to the target repository
-  - Read: package.json, pyproject.toml, or equivalent for dependencies
-  - Read: source code for API/feature discovery
+  - "Read access to the target repository"
+  - "Read: package.json, pyproject.toml, or equivalent for dependencies"
+  - "Read: source code for API/feature discovery"
 ---
 
 ## Purpose

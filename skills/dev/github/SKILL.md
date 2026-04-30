@@ -1,19 +1,19 @@
 ---
 name: github
-trigger: "commit [changes]", "open a PR", "write a PR description", "update the README", "summarize what changed", "push [branch]", any GitHub/git workflow request, references to [YOUR_REPO_1] / [YOUR_REPO_2] / [YOUR_REPO_3]
+trigger: "commit [changes], open a PR, write a PR description, update the README, summarize what changed, push [branch], any GitHub/git workflow request, references to [YOUR_REPO_1] / [YOUR_REPO_2] / [YOUR_REPO_3]"
 inputs:
-  - Task type: commit | pr | readme | status | branch | release-notes
-  - Optional: repo name ([YOUR_REPO_1] | [YOUR_REPO_2] | [YOUR_REPO_3] | other)
-  - Optional: scope of changes, PR title, audience for README
+  - "Task type: commit | pr | readme | status | branch | release-notes"
+  - "Optional: repo name ([YOUR_REPO_1] | [YOUR_REPO_2] | [YOUR_REPO_3] | other)"
+  - "Optional: scope of changes, PR title, audience for README"
 outputs:
-  - Commit with a clean, accurate message
-  - PR description ready to open
-  - README draft or update
-  - Git status summary
+  - "Commit with a clean, accurate message"
+  - "PR description ready to open"
+  - "README draft or update"
+  - "Git status summary"
 dependencies:
-  - GitHub CLI (gh) — must be authenticated: gh auth status
-  - Git (standard)
-  - Bash tool for running git/gh commands
+  - "GitHub CLI (gh) — must be authenticated: gh auth status"
+  - "Git (standard)"
+  - "Bash tool for running git/gh commands"
 ---
 
 ## Repos Context

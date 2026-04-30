@@ -1,17 +1,17 @@
 ---
 name: project-brief
-trigger: "create a project brief", "project brief for [project]", "brief this project", "scope document", "project kickoff doc"
+trigger: "create a project brief, project brief for [project], brief this project, scope document, project kickoff doc"
 inputs:
-  - Project name and client
-  - Goals and requirements (even rough/incomplete)
-  - Optional: deadline, budget, stakeholders
+  - "Project name and client"
+  - "Goals and requirements (even rough/incomplete)"
+  - "Optional: deadline, budget, stakeholders"
 outputs:
-  - Structured project brief document
-  - Saved to ./memory/projects/PROJECT/brief.md
+  - "Structured project brief document"
+  - "Saved to ./memory/projects/PROJECT/brief.md"
 dependencies:
-  - Read: ./context/active-projects.md
-  - Read: ./memory/people/ (stakeholder notes)
-  - Write: ./memory/projects/
+  - "Read: ./context/active-projects.md"
+  - "Read: ./memory/people/ (stakeholder notes)"
+  - "Write: ./memory/projects/"
 ---
 
 ## Purpose

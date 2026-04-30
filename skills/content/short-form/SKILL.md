@@ -1,16 +1,16 @@
 ---
 name: short-form
-trigger: "short-form script", "reel script", "shorts script", "TikTok script", "vertical video script", "60 second video"
+trigger: "short-form script, reel script, shorts script, TikTok script, vertical video script, 60 second video"
 inputs:
-  - Topic or key insight to convey
-  - Optional: source content to adapt from (video, thread, blog)
-  - Optional: style (talking head, screen recording, B-roll overlay)
+  - "Topic or key insight to convey"
+  - "Optional: source content to adapt from (video, thread, blog)"
+  - "Optional: style (talking head, screen recording, B-roll overlay)"
 outputs:
-  - 3 script variations (60s, 90s, 30s)
-  - Saved to ./memory/projects/short-form/YYYY-MM-DD-topic.md
+  - "3 script variations (60s, 90s, 30s)"
+  - "Saved to ./memory/projects/short-form/YYYY-MM-DD-topic.md"
 dependencies:
-  - Read: ./context/brand.md
-  - Write: ./memory/projects/short-form/
+  - "Read: ./context/brand.md"
+  - "Write: ./memory/projects/short-form/"
 ---
 
 ## Purpose

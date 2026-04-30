@@ -1,19 +1,19 @@
 ---
 name: cold-outreach
-trigger: "write outreach", "cold email to [person]", "draft an outreach message", "reach out to [company]", "cold DM", "prospecting email"
+trigger: "write outreach, cold email to [person], draft an outreach message, reach out to [company], cold DM, prospecting email"
 inputs:
-  - Target person/company name and context
-  - What [YOUR_NAME] offers that's relevant to them
-  - Optional: channel (email, X DM, LinkedIn)
-  - Optional: specific pain point or trigger event
+  - "Target person/company name and context"
+  - "What [YOUR_NAME] offers that's relevant to them"
+  - "Optional: channel (email, X DM, LinkedIn)"
+  - "Optional: specific pain point or trigger event"
 outputs:
-  - 3 outreach message variations
-  - Saved to ./memory/projects/outreach/YYYY-MM-DD-target.md
+  - "3 outreach message variations"
+  - "Saved to ./memory/projects/outreach/YYYY-MM-DD-target.md"
 dependencies:
-  - Read: ./context/brand.md
-  - Read: ./memory/people/ (if target has existing notes)
-  - Web search for target research
-  - Write: ./memory/projects/outreach/
+  - "Read: ./context/brand.md"
+  - "Read: ./memory/people/ (if target has existing notes)"
+  - "Web search for target research"
+  - "Write: ./memory/projects/outreach/"
 ---
 
 ## Purpose

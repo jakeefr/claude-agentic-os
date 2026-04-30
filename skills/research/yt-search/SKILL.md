@@ -1,17 +1,17 @@
 ---
 name: yt-search
-trigger: "search YouTube for", "find YouTube videos about", "YT search", "what videos exist on [topic]", "YouTube research"
+trigger: "search YouTube for, find YouTube videos about, YT search, what videos exist on [topic], YouTube research"
 inputs:
-  - Search query or topic
-  - Optional: channel filter, date range, min view count
-  - Optional: purpose (competitive research, learning, content gap analysis)
+  - "Search query or topic"
+  - "Optional: channel filter, date range, min view count"
+  - "Optional: purpose (competitive research, learning, content gap analysis)"
 outputs:
-  - Curated list of relevant videos with analysis
-  - Saved to ./memory/research/yt-search-YYYY-MM-DD-topic.md
+  - "Curated list of relevant videos with analysis"
+  - "Saved to ./memory/research/yt-search-YYYY-MM-DD-topic.md"
 dependencies:
-  - Web search capability
-  - Read: ./context/brand.md (for content gap analysis)
-  - Write: ./memory/research/
+  - "Web search capability"
+  - "Read: ./context/brand.md (for content gap analysis)"
+  - "Write: ./memory/research/"
 ---
 
 ## Purpose

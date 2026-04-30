@@ -10,15 +10,15 @@
 
 ## What is this?
 
-Agentic OS is a 4-layer system that turns Claude Code into a full personal operating system — memory, skills, automated routines, and a real-time dashboard. It reads your context, executes modular skills, writes persistent memory to an Obsidian vault, and runs scheduled automations headlessly.
+Agentic OS turns Claude Code into a personal operating system. It's a 4-layer framework — memory, skills, automations, and a dashboard — that you customize to fit how you work. Clone it, fill in your context, build your skills, and let it run.
 
 ## Features
 
 - **Obsidian-backed memory** — persistent, linked markdown vault that Claude reads and writes
-- **Modular skill fleet** — 30+ skills across productivity, research, content, dev, and business
-- **Automated routines** — 7 scheduled routines (morning brief, inbox triage, lead scanner, etc.)
+- **Skill framework** — structured `SKILL.md` format with example templates across 5 categories
+- **Routine automation** — define scheduled tasks that run headlessly via cron or Task Scheduler
 - **Real-time dashboard** — Next.js dashboard with token tracking, activity charts, routine status
-- **Headless execution** — routines run unattended via cron/Task Scheduler on any machine
+- **Headless execution** — routines run unattended on any machine
 - **VPS deployment ready** — deploy to a free-tier VM and let it run 24/7
 
 ## Quick Start
@@ -100,33 +100,61 @@ Open `memory/` as an Obsidian vault to browse, search, and visualize your knowle
 
 ## Skills
 
-Each skill is a `SKILL.md` file with a structured format: name, trigger, inputs, steps, outputs.
+A skill is a `SKILL.md` file that tells Claude how to execute a specific task. Skills are organized into categories:
 
 ```
 skills/
-  productivity/   gmail, calendar, morning-brief, vault-cleanup
-  research/       deep-research, yt-pipeline, github-trending, competitor-analysis
-  content/        ideation, outlines, content-cascade, short-form, carousel, x-growth
-  business/       proposal-generator, cold-outreach, status-update, project-brief
-  dev/            github, code-review, commit-summary, readme-generator
-  routines/       morning-intel-brief, inbox-triage, client-pulse-check, + 4 more
+  productivity/   # Email, calendar, vault maintenance
+  research/       # Deep research, YouTube analysis, trending repos
+  content/        # Social posts, threads, carousels, ideation
+  business/       # Proposals, outreach, status updates
+  dev/            # GitHub workflows, code review, READMEs
+  routines/       # Skills designed to run on a schedule
 ```
 
-To add a skill: create `skills/{category}/{skill-name}/SKILL.md` following the existing format.
+Example templates are included in each category as starting points — customize them or build your own.
+
+**SKILL.md format:**
+
+```yaml
+---
+name: my-skill
+trigger: "phrases that activate this skill"
+inputs:
+  - "What the skill needs to run"
+outputs:
+  - "What the skill produces"
+dependencies:
+  - "Tools or files required"
+---
+```
+
+Below the frontmatter, write the step-by-step instructions Claude should follow. Include the purpose, detailed steps, output format, and any guardrails.
+
+**To create a new skill:** add a folder at `skills/{category}/{skill-name}/` with a `SKILL.md` inside. Claude discovers skills by scanning this directory tree.
 
 ## Routines
 
-Routines are skills that run on a schedule. Definitions live in `automations/routines.json`.
+Routines are skills that run on a schedule — unattended, headlessly. Each routine points to a `SKILL.md` and is defined in `automations/routines.json`.
 
-| Routine | Schedule | What it does |
-|---------|----------|--------------|
-| Morning Intel Brief | Daily 7 AM | AI/dev news, email summary, daily note |
-| Inbox Triage | Daily 8 AM | Gmail categorize + draft replies |
-| Client Pulse Check | Weekdays 9 AM | Review clients, flag stale ones |
-| GitHub Repo Health | Mon/Wed/Fri 10 AM | PRs, issues, CI across repos |
-| Lead Scanner | Mon/Thu 11 AM | Reddit/X/HN prospect search |
-| Content Pipeline | Weekdays 12 PM | Mine notes for X content ideas |
-| Daily Wrap | Daily 6 PM | Summarize day, email wrap-up |
+**Example routine entry:**
+
+```json
+{
+  "id": "morning-intel-brief",
+  "name": "Morning Intel Brief",
+  "description": "AI/dev news scan, email summary, daily note creation",
+  "schedule": "0 7 * * *",
+  "scheduleHuman": "Daily 7:00 AM",
+  "category": "productivity",
+  "skillPath": "skills/routines/morning-intel-brief/SKILL.md",
+  "estimatedMinutes": 8,
+  "estimatedCost": 0.15,
+  "enabled": true
+}
+```
+
+Define your own routines by adding entries to `routines.json` and creating the corresponding `SKILL.md` in `skills/routines/`. The dashboard picks them up automatically.
 
 **Run manually:**
 ```bash
@@ -142,7 +170,7 @@ npx tsx automations/run-routine.ts morning-intel-brief
 
 ## Email Notifications
 
-Routines can send email summaries via SMTP. Configure `GMAIL_USER` and `GMAIL_APP_PASSWORD` in `.env`, then routines like Daily Wrap will email you results automatically.
+Routines can send email summaries via SMTP. Configure `GMAIL_USER` and `GMAIL_APP_PASSWORD` in `.env`, then routines will email you results automatically.
 
 ```bash
 # Test email manually

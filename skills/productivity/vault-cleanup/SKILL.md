@@ -1,16 +1,16 @@
 ---
 name: vault-cleanup
-trigger: "clean up vault", "vault cleanup", "vault maintenance", "check vault health", "kb status", "memory health"
+trigger: "clean up vault, vault cleanup, vault maintenance, check vault health, kb status, memory health"
 inputs:
-  - Optional: scope (full | inbox-only | stale-check | orphan-check)
-  - Optional: dry-run flag (show what would be done without doing it)
+  - "Optional: scope (full | inbox-only | stale-check | orphan-check)"
+  - "Optional: dry-run flag (show what would be done without doing it)"
 outputs:
-  - Vault health report
-  - List of actions taken (or proposed in dry-run mode)
-  - Updated LEARNINGS.md with cleanup summary
+  - "Vault health report"
+  - "List of actions taken (or proposed in dry-run mode)"
+  - "Updated LEARNINGS.md with cleanup summary"
 dependencies:
-  - Read/Write access to ./memory/
-  - Glob and Grep tools for scanning
+  - "Read/Write access to ./memory/"
+  - "Glob and Grep tools for scanning"
 ---
 
 ## Purpose

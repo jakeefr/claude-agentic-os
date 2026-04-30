@@ -1,18 +1,18 @@
 ---
 name: status-update
-trigger: "project status", "status update for [client]", "where are we on [project]", "client update", "write a status update"
+trigger: "project status, status update for [client], where are we on [project], client update, write a status update"
 inputs:
-  - Project or client name
-  - Optional: audience (client, internal, stakeholder)
-  - Optional: specific accomplishments or blockers to highlight
+  - "Project or client name"
+  - "Optional: audience (client, internal, stakeholder)"
+  - "Optional: specific accomplishments or blockers to highlight"
 outputs:
-  - Formatted status update ready to send
-  - Saved to ./memory/projects/PROJECT/status-YYYY-MM-DD.md
+  - "Formatted status update ready to send"
+  - "Saved to ./memory/projects/PROJECT/status-YYYY-MM-DD.md"
 dependencies:
-  - Read: ./memory/projects/PROJECT/ (brief, recent notes)
-  - Read: ./context/active-projects.md
-  - Git log access for development projects
-  - Write: ./memory/projects/
+  - "Read: ./memory/projects/PROJECT/ (brief, recent notes)"
+  - "Read: ./context/active-projects.md"
+  - "Git log access for development projects"
+  - "Write: ./memory/projects/"
 ---
 
 ## Purpose

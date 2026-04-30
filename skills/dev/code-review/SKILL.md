@@ -1,16 +1,16 @@
 ---
 name: code-review
-trigger: "review this code", "code review", "review my PR", "check this implementation", "review [file/feature]"
+trigger: "review this code, code review, review my PR, check this implementation, review [file/feature]"
 inputs:
-  - Code to review (file path, PR URL, or pasted code)
-  - Optional: focus area (security, performance, architecture, style)
-  - Optional: context (what the code is supposed to do)
+  - "Code to review (file path, PR URL, or pasted code)"
+  - "Optional: focus area (security, performance, architecture, style)"
+  - "Optional: context (what the code is supposed to do)"
 outputs:
-  - Structured code review with actionable feedback
-  - Optional: saved to ./memory/projects/PROJECT/review-YYYY-MM-DD.md
+  - "Structured code review with actionable feedback"
+  - "Optional: saved to ./memory/projects/PROJECT/review-YYYY-MM-DD.md"
 dependencies:
-  - Read access to source files
-  - Git CLI for PR/diff context
+  - "Read access to source files"
+  - "Git CLI for PR/diff context"
 ---
 
 ## Purpose

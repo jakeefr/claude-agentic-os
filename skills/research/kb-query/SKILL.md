@@ -1,18 +1,18 @@
 ---
 name: kb-query
-trigger: "search memory", "find in vault", "what do I know about [topic]", "check my notes on [topic]", "kb query [topic]", "search notes for [topic]"
+trigger: "search memory, find in vault, what do I know about [topic], check my notes on [topic], kb query [topic], search notes for [topic]"
 inputs:
-  - Query: keyword, topic, person name, project name, or question
-  - Optional: scope (all | research | projects | people | decisions | daily-notes)
-  - Optional: time range (e.g., "last 30 days", "this month")
+  - "Query: keyword, topic, person name, project name, or question"
+  - "Optional: scope (all | research | projects | people | decisions | daily-notes)"
+  - "Optional: time range (e.g., last 30 days, this month)"
 outputs:
-  - Ranked list of matching notes with relevant excerpts
-  - Summary of what the vault contains on the topic
-  - Links to the most relevant notes
+  - "Ranked list of matching notes with relevant excerpts"
+  - "Summary of what the vault contains on the topic"
+  - "Links to the most relevant notes"
 dependencies:
-  - Read access to ./memory/ (full vault)
-  - Grep tool for content search
-  - Glob tool for file discovery
+  - "Read access to ./memory/ (full vault)"
+  - "Grep tool for content search"
+  - "Glob tool for file discovery"
 ---
 
 ## Purpose

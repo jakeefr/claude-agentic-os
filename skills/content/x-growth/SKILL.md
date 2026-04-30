@@ -1,18 +1,18 @@
 ---
 name: x-growth
-trigger: "write a tweet", "draft a thread", "X content for [topic]", "post idea", "what should I post about", "help me grow on X", engagement strategy questions for @[YOUR_X_HANDLE]
+trigger: "write a tweet, draft a thread, X content for [topic], post idea, what should I post about, help me grow on X, engagement strategy questions for @[YOUR_X_HANDLE]"
 inputs:
-  - Topic, idea, or goal (what to post about or what growth problem to solve)
-  - Optional: format preference (single tweet, thread, reply, quote tweet)
-  - Optional: context (what's happening in [YOUR_NAME]'s work or life that's relevant)
+  - "Topic, idea, or goal (what to post about or what growth problem to solve)"
+  - "Optional: format preference (single tweet, thread, reply, quote tweet)"
+  - "Optional: context (what's happening in [YOUR_NAME]'s work or life that's relevant)"
 outputs:
-  - Ready-to-post tweet/thread draft
-  - Optional: saved draft to ./memory/projects/x-content/
-  - Optional: content calendar additions
+  - "Ready-to-post tweet/thread draft"
+  - "Optional: saved draft to ./memory/projects/x-content/"
+  - "Optional: content calendar additions"
 dependencies:
-  - Read: ./context/brand.md (always)
-  - Read: ./memory/projects/x-content/ (for recent posts — avoid repetition)
-  - Write: ./memory/projects/x-content/
+  - "Read: ./context/brand.md (always)"
+  - "Read: ./memory/projects/x-content/ (for recent posts — avoid repetition)"
+  - "Write: ./memory/projects/x-content/"
 ---
 
 ## Account Context

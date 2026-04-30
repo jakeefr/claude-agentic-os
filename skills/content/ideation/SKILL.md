@@ -1,18 +1,18 @@
 ---
 name: ideation
-trigger: "content ideas", "what should I post about", "brainstorm topics", "content ideation", "what should I make next", "video ideas"
+trigger: "content ideas, what should I post about, brainstorm topics, content ideation, what should I make next, video ideas"
 inputs:
-  - Optional: platform focus (X, YouTube, short-form, all)
-  - Optional: niche/angle constraint (AI, dev tools, freelancing, automation)
-  - Optional: recent trends or events to riff on
+  - "Optional: platform focus (X, YouTube, short-form, all)"
+  - "Optional: niche/angle constraint (AI, dev tools, freelancing, automation)"
+  - "Optional: recent trends or events to riff on"
 outputs:
-  - 15-20 content ideas with platform assignments
-  - Saved to ./memory/projects/content-ideation/YYYY-MM-DD.md
+  - "15-20 content ideas with platform assignments"
+  - "Saved to ./memory/projects/content-ideation/YYYY-MM-DD.md"
 dependencies:
-  - Read: ./context/brand.md
-  - Read: ./context/active-projects.md
-  - Read: ./memory/projects/ (scan recent content for gaps)
-  - Write: ./memory/projects/content-ideation/
+  - "Read: ./context/brand.md"
+  - "Read: ./context/active-projects.md"
+  - "Read: ./memory/projects/ (scan recent content for gaps)"
+  - "Write: ./memory/projects/content-ideation/"
 ---
 
 ## Purpose
