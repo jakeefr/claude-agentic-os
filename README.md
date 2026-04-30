@@ -183,8 +183,7 @@ Next.js · TypeScript · Tailwind CSS · shadcn/ui · Recharts · Framer Motion 
 
 ## Credits 
 
-Inspired by [Chase AI's Agentic OS architecture]
-(https://www.youtube.com/watch?v=pfPi04pIfaw&t=874s)
+Inspired by [Chase AI's Agentic OS architecture](https://www.youtube.com/watch?v=pfPi04pIfaw&t=874s)
 
 ## License
 
