@@ -2,6 +2,26 @@ import { spawn } from 'child_process'
 import { addRun, updateRun, getRunOutputPath } from '@/lib/runs'
 import { VAULT_ROOT } from '@/lib/vault'
 import fs from 'fs'
+import path from 'path'
+
+function buildClaudePrompt(prompt: string, skill: string, skillPath?: string): string {
+  if (!skillPath) return prompt
+
+  const absolutePath = path.join(VAULT_ROOT, skillPath)
+  if (!fs.existsSync(absolutePath)) return prompt
+
+  const skillContent = fs.readFileSync(absolutePath, 'utf-8')
+  return [
+    `You are executing the "${skill}" skill. Here are your full instructions:`,
+    '',
+    '--- SKILL INSTRUCTIONS ---',
+    skillContent,
+    '--- END SKILL INSTRUCTIONS ---',
+    '',
+    'Now execute the following task using the instructions above:',
+    prompt,
+  ].join('\n')
+}
 
 export async function POST(request: Request) {
   const body = await request.json()
@@ -11,9 +31,7 @@ export async function POST(request: Request) {
     return Response.json({ error: 'prompt is required' }, { status: 400 })
   }
 
-  const claudePrompt = skillPath
-    ? `Using the ${skill} skill (${skillPath}), execute the following task: ${prompt}`
-    : prompt
+  const claudePrompt = buildClaudePrompt(prompt, skill, skillPath)
 
   const id = `run-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
 
@@ -32,12 +50,15 @@ export async function POST(request: Request) {
 
   const outputPath = getRunOutputPath(id)
 
-  const child = spawn('claude', ['--print', '--dangerously-skip-permissions', claudePrompt], {
+  const child = spawn('claude', ['--print', '--dangerously-skip-permissions', '-'], {
     cwd: VAULT_ROOT,
     shell: true,
-    stdio: ['ignore', 'pipe', 'pipe'],
+    stdio: ['pipe', 'pipe', 'pipe'],
     env: { ...process.env },
   })
+
+  child.stdin.write(claudePrompt)
+  child.stdin.end()
 
   run.pid = child.pid ?? null
   updateRun(id, { pid: run.pid })
