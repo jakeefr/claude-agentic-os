@@ -1,8 +1,12 @@
+<div align="center">
+
 # Agentic OS
 
 **Your AI-powered personal operating system, built on Claude Code.**
 
 ![Agentic OS Demo](public/agentic-os-demo.gif)
+
+</div>
 
 ## What is this?
 
